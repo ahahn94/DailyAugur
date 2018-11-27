@@ -5,13 +5,6 @@
  * Date: 07.11.18
  * Time: 09:59
  */
-
-// Handle logout.
-$logout = isset($_GET["logout"]) ? $_GET["logout"] : false;
-if ($logout == "true") {
-    header("HTTP/1.1 401 Unauthorized", true, 401);
-}
-
 ?>
 <html>
 <head>
@@ -29,7 +22,7 @@ require_once "res/style/menu.php"
 ?>
 
 <?php
-require_once __DIR__ . "/../res/page_layout.php";
+require_once "res/style/page_layout_preview.php";
 ?>
 
 <?php
