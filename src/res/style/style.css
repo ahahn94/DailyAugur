@@ -1,0 +1,71 @@
+iframe {
+    filter: grayscale(100%);
+}
+
+img {
+    filter: grayscale(100%);
+}
+
+video {
+    filter: grayscale(100%);
+}
+
+@font-face {
+    font-family: Mugglenews;
+    src: url("../mugglenews.ttf");
+}
+
+a {
+    color: gold;
+}
+
+h1 {
+    font-family: Mugglenews, arial, serif;
+    font-size: 1200%;
+    margin: 0;
+}
+
+h2 {
+    font-family: Mugglenews, arial, serif;
+    font-size: 240%;
+    margin: 0;
+}
+
+h3 {
+    font-family: Mugglenews, arial, serif;
+    font-size: 200%;
+    margin: 0;
+}
+
+.text_center {
+    text-align: center;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.text_right {
+    text-align: right;
+}
+
+.textflow {
+    font-family: Mugglenews;
+}
+
+.text_area{
+    margin: 10px 30px 30px 30px;
+}
+
+.wrap_video_left {
+    float: left;
+    margin: 5px 5px 5px 5px;
+}
+
+.header_table {
+    padding-top: 2px;
+    padding-right: 20px;
+    padding-bottom: 2px;
+    padding-left: 20px;
+    margin: 0;
+}
