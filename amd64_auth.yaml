@@ -16,6 +16,8 @@ services:
     command: bash -c "htpasswd -Bb -c /etc/apache2/.htpasswd $${AUTH_USERNAME} $${AUTH_PASSWORD}; source /etc/apache2/envvars; apache2 -D FOREGROUND"
   database:
     image: mysql:5.5
+    ports:
+      - "3306:3306" # Only open for development purposes.
     environment:
       MYSQL_ROOT_PASSWORD: keinsicherespasswort
       MYSQL_USER: DailyAugur

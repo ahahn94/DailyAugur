@@ -1,9 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StyleTest</title>
+    <?php
+    include "res/style/head_includes.php";
+    ?>
+</head>
+<body style="background-color: #f9f7f1">
 <?php
-/**
- * Created by PhpStorm.
- * User: ahahn94
- * Date: 07.11.18
- * Time: 09:58
- */
+require_once "res/page_layout.php";
 ?>
-<h1>DailyAugur</h1>
+</body>
+</html>
