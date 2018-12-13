@@ -1,3 +1,7 @@
+html, body {
+    height: 100%;
+}
+
 iframe {
     filter: grayscale(100%);
 }
@@ -16,12 +20,13 @@ video {
 }
 
 a {
-    color: gold;
+    color: black;
+    text-decoration: none;
 }
 
 h1 {
     font-family: Mugglenews, arial, serif;
-    font-size: 1200%;
+    font-size: 700%;
     margin: 0;
 }
 
@@ -53,7 +58,7 @@ h3 {
     font-family: Mugglenews;
 }
 
-.text_area{
+.text_area {
     margin: 10px 30px 30px 30px;
 }
 
