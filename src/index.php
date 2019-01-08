@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>StyleTest</title>
+    <title>Daily Augur</title>
     <?php
     include "res/style/head_includes.php";
     ?>

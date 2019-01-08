@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ahahn94
- * Date: 25.11.18
- * Time: 22:22
+ * Created by ahahn94
+ * on 25.11.18
  */
 ?>
 <?php

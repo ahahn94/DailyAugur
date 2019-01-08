@@ -1,9 +1,7 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ahahn94
- * Date: 25.11.18
- * Time: 18:16
+ * Created by ahahn94
+ * on 25.11.18
  */
 
 /**
@@ -46,9 +44,14 @@ class Initialization
     private static function initialize()
     {
         $connection = Connection::get_instance();
+        /*
+        * date_published is the date of the initial publication.
+        * date_last_modified is the date of the last modification to the published page.
+        * date_saved is the date of the last modification of the saved content and title.
+        */
         $connection->exec("
 CREATE TABLE Pages (
-  page_id                   INT PRIMARY KEY,
+  page_id                   INT PRIMARY KEY AUTO_INCREMENT,
   title                     TEXT,
   published_content         TEXT,
   saved_title               TEXT,

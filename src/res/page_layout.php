@@ -2,15 +2,22 @@
 require_once $_SERVER["DOCUMENT_ROOT"] . "/php_includes/database/resources/Pages.php";
 
 // Handle page selection.
-$page_id = isset($_GET["page_id"]) ? $_GET["page_id"] : 0;
+$page_ids = Pages::get_published_pages_ids(); // Get page_ids of published pages.
+$page_id = isset($_GET["page_id"]) ? $_GET["page_id"] : $page_ids[0]["page_id"];
 
 $page = Pages::read_dataset($page_id);
-$page_count = Pages::count_datasets();
+$page_count = Pages::count_published_pages_datasets();
 ?>
 
 <?php
-$previous = ($page_id != 0) ? "index.php?page_id=" . ($page_id - 1) : "";
-$next = ($page_id != ($page_count - 1)) ? "index.php?page_id=" . ($page_id + 1) : "";
+
+// Match previous and next against page_ids on the database.
+$current_position = array_search(array("page_id" => $page_id), $page_ids);
+$previous_id = ($current_position != 0) ? $page_ids[$current_position-1]["page_id"] : -1;
+$next_id = ($current_position != $page_count - 1) ? $page_ids[$current_position+1]["page_id"] : -1;
+
+$previous = ($previous_id != -1) ? "index.php?page_id=" . $previous_id : "";
+$next = ($next_id != -1) ? "index.php?page_id=" . $next_id : "";
 $home = "index.php";
 ?>
 

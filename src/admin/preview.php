@@ -1,13 +1,13 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: ahahn94
- * Date: 07.11.18
- * Time: 09:59
+ * Created by ahahn94
+ * on 07.11.18
  */
 ?>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>Daily Augur</title>
     <link rel="stylesheet" type="text/css" href="res/style/style.css">
     <?php
     require_once "res/style/head_includes.php";
