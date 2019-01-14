@@ -4,7 +4,7 @@
  * on 25.11.18
  */
 
-include "Resource.php";
+require_once "Resource.php";
 
 /**
  * Class Pages handles the database table Pages.
@@ -71,7 +71,7 @@ class Pages implements Resource
     public static function read_datasets()
     {
         $connection = Connection::get_instance();
-        $statement = $connection->prepare("SELECT * FROM Pages order by page_id;");
+        $statement = $connection->prepare("SELECT * FROM Pages ORDER BY page_id;");
         $statement->execute();
         if ($statement->rowCount() != 0) {
             return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -119,7 +119,7 @@ class Pages implements Resource
     public static function get_ids()
     {
         $connection = Connection::get_instance();
-        $statement = $connection->prepare("SELECT page_id FROM Pages order by page_id;");
+        $statement = $connection->prepare("SELECT page_id FROM Pages ORDER BY page_id;");
         $statement->execute();
         if ($statement->rowCount() != 0) {
             return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -135,7 +135,7 @@ class Pages implements Resource
     public static function get_saved_pages_ids()
     {
         $connection = Connection::get_instance();
-        $statement = $connection->prepare("SELECT page_id FROM Pages order by page_id;");
+        $statement = $connection->prepare("SELECT page_id FROM Pages ORDER BY page_id;");
         $statement->execute();
         if ($statement->rowCount() != 0) {
             return $statement->fetchAll(PDO::FETCH_ASSOC);
@@ -151,7 +151,7 @@ class Pages implements Resource
     public static function get_published_pages_ids()
     {
         $connection = Connection::get_instance();
-        $statement = $connection->prepare("SELECT page_id FROM Pages WHERE date_published != '0000-00-00 00:00:00' order by page_id;");
+        $statement = $connection->prepare("SELECT page_id FROM Pages WHERE date_published != '0000-00-00 00:00:00' ORDER BY page_id;");
         $statement->execute();
         if ($statement->rowCount() != 0) {
             return $statement->fetchAll(PDO::FETCH_ASSOC);

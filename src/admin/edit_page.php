@@ -14,10 +14,29 @@
     require_once __DIR__ . "/../php_includes/database/resources/Pages.php";
     ?>
     <script type="text/javascript" src="res/behaviour/editor.js"></script>
+    <link rel="stylesheet" type="text/css" href="res/style/overlay.css">
 </head>
 <body>
+
+<!-- Overlays -->
+<div class="overlay" id="overlay-page-layout">
+    <!-- Page layout selection. -->
+    <?php
+    require_once "res/style/page_layout_overlay.php";
+    ?>
+</div>
+<div class="overlay" id="overlay-image-selection">
+    <!-- Image selection overlay. -->
+    <?php
+    require_once "res/style/image_selection_overlay.php";
+    ?>
+</div>
+
 <?php
 require_once "res/style/menu.php";
+?>
+
+<?php
 
 // Get page number.
 $page_id = isset($_GET["page_id"]) ? $_GET["page_id"] : -1;
@@ -39,13 +58,20 @@ if ($page_id == -1) {
             echo $page["saved_title"];
             ?></textarea>
             <p>
+                <!-- Editor button panel (top). -->
+                <button class="btn btn-primary" id="button-undo"><i class="fa fa-undo"></i> Undo</button>
+                <button class="btn btn-primary" id="button-redo"><i class="fa fa-redo"></i> Redo</button>
                 <button class="btn btn-primary" id="button-bold"><i class="fa fa-bold"></i> Bold</button>
                 <button class="btn btn-primary" id="button-italic"><i class="fa fa-italic"></i> Italic</button>
                 <button class="btn btn-primary" id="button-underline"><i class="fa fa-underline"></i> Underline</button>
                 <button class="btn btn-primary" id="button-newline"><b>&lt;br&gt;</b> New Line</button>
                 <button class="btn btn-primary" id="button-link"><i class="fa fa-link"></i> Link</button>
+                <button class="btn btn-primary" id="button-heading"><i class="fa fa-heading"></i> Heading</button>
                 <button class="btn btn-primary" id="button-picture"><i class="fa fa-image"></i> Picture</button>
+                <button class="btn btn-primary" id="button-gallery"><i class="fa fa-images"></i> Gallery</button>
                 <button class="btn btn-primary" id="button-video"><i class="fa fa-video"></i> Video</button>
+                <button class="btn btn-primary" id="button-page-layout"><i class="fa fa-columns"></i> Page Layout
+                </button>
             </p>
             <textarea style="width: 100%; height: 70%;"
                       id="saved_content"><?php echo $page["saved_content"]; ?></textarea>
@@ -55,6 +81,7 @@ if ($page_id == -1) {
                         <label id="save_notification"></label>
                     </p>
                     <p>
+                        <!-- Editor button panel (bottom). -->
                         <button class="btn btn-danger" id="button-delete">Delete <i class="fa fa-trash"></i>
                         </button>
                         <button class="btn btn-primary" id="button-publish">Publish <i class="fa fa-upload"></i>
@@ -74,8 +101,16 @@ if ($page_id == -1) {
             var preview_link = "preview.php?page_id=<?php echo $page_id?>";
 
             /*
-            * Add functions to the buttons
+            * Add functions to the buttons.
             */
+            document.getElementById("button-undo").onclick = function () {
+                undo();
+            };
+
+            document.getElementById("button-redo").onclick = function () {
+                redo();
+            };
+
             document.getElementById("button-bold").onclick = function () {
                 insertBold();
             };
@@ -97,11 +132,23 @@ if ($page_id == -1) {
             };
 
             document.getElementById("button-picture").onclick = function () {
-                insertPicture();
+                insertPictureTag();
+            };
+
+            document.getElementById("button-gallery").onclick = function () {
+                showOverlay("overlay-image-selection")
             };
 
             document.getElementById("button-video").onclick = function () {
                 insertVideo();
+            };
+
+            document.getElementById("button-heading").onclick = function () {
+                insertHeading();
+            };
+
+            document.getElementById("button-page-layout").onclick = function () {
+                showOverlay("overlay-page-layout");
             };
 
             document.getElementById("button-delete").onclick = function () {
@@ -164,7 +211,7 @@ if ($page_id == -1) {
                 /**
                  * Save changes. If preview is open, reload.
                  */
-                // Fill POST form with data.
+                    // Fill POST form with data.
                 var formData = new FormData();
                 formData.append("page_id", page_id);
                 formData.append("saved_title", document.getElementById("saved_title").value);
@@ -193,7 +240,8 @@ if ($page_id == -1) {
             document.getElementById("saved_content").addEventListener('keydown', function (event) {
                 /*
                 Bind ctrl. + s on the saved_content textarea to the button_save function.
-                 */                var S = 83; // keycode of the key 'S'.
+                 */
+                var S = 83; // keycode of the key 'S'.
                 if ((event.keyCode === S) && (event.ctrlKey)) {
                     event.preventDefault();
                     document.getElementById("button-save").click();

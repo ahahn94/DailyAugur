@@ -22,6 +22,11 @@ $filename = basename($_SERVER["PHP_SELF"], ".php");
             ?>">
                 <a class="nav-link" href="pages.php"><i class="fas fa-book"></i>  Pages</a>
             </li>
+            <li class="nav-item <?php
+            if ($filename == "images") echo "active"
+            ?>">
+                <a class="nav-link" href="images.php"><i class="fas fa-image"></i>  Images</a>
+            </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">

@@ -60,6 +60,12 @@ CREATE TABLE Pages (
   date_published            DATETIME DEFAULT NULL,
   date_last_modified        DATETIME,
   date_saved                DATETIME
+);
+
+CREATE TABLE Images (
+  image_id                  INT PRIMARY KEY AUTO_INCREMENT,
+  name                      TEXT,
+  path                      TEXT
 );");
     }
 

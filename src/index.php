@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Daily Augur</title>
     <?php
-    include "res/style/head_includes.php";
+    require_once "res/style/head_includes.php";
     ?>
 </head>
 <body style="background-color: #f9f7f1">

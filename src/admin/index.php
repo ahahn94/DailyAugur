@@ -8,6 +8,12 @@
 $logout = isset($_GET["logout"]) ? $_GET["logout"] : false;
 if ($logout == "true") {
     header("HTTP/1.1 401 Unauthorized", true, 401);
+    ?>
+    <script>
+        // Redirect to index.php of user area at logout.
+        location.replace("/index.php");
+    </script>
+    <?php
 }
 
 ?>
