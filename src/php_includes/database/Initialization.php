@@ -4,6 +4,9 @@
  * on 25.11.18
  */
 
+require_once __DIR__ . "/../Logging/Logger.php";
+require_once "Connection.php";
+
 /**
  * Class Initialization
  * Handle initialization of the database tables.
@@ -12,9 +15,9 @@
 class Initialization
 {
 
-
     /**
      * Check if database is properly initialized.
+     * Initialize it if necessary.
      */
     public static function check_initialization()
     {
@@ -24,17 +27,21 @@ class Initialization
 
         // Get table names from database.
         $connection = Connection::get_instance();
-        $statement = $connection->prepare("SHOW TABLES FROM DailyAugur;");
-        $statement->execute();
-        if ($statement->rowCount() != 0) {
-            $tables_in_database = $statement->fetchAll(PDO::FETCH_ASSOC);
-            $tables_in_database = array_column($tables_in_database, "Tables_in_DailyAugur");
-            // Check if table_names does not matches tables_in_database.
-            if (!(count(array_intersect($table_names, $tables_in_database)) == count($table_names))) {
+        if ($connection != -1) {
+            $statement = $connection->prepare("SHOW TABLES FROM DailyAugur;");
+            $statement->execute();
+            if ($statement->rowCount() != 0) {
+                $tables_in_database = $statement->fetchAll(PDO::FETCH_ASSOC);
+                $tables_in_database = array_column($tables_in_database, "Tables_in_DailyAugur");
+                // Check if table_names does not matches tables_in_database.
+                if (!(count(array_intersect($table_names, $tables_in_database)) == count($table_names))) {
+                    self::initialize();
+                }
+            } else {
                 self::initialize();
             }
         } else {
-            self::initialize();
+            Logger::logError("Checking initialization failed! Unable to obtain database connection.");
         }
     }
 
@@ -67,6 +74,9 @@ CREATE TABLE Images (
   name                      TEXT,
   path                      TEXT
 );");
+        if ($connection->errorCode() != 0) {
+            Logger::logError("Initializing database failed! SQL error code " . $connection->errorCode());
+        }
     }
 
 }

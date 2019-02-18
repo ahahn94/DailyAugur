@@ -4,6 +4,7 @@
  * on 25.11.18
  */
 
+require_once __DIR__ . "/../../Logging/Logger.php";
 require_once __DIR__ . "/../Connection.php";
 
 interface Resource

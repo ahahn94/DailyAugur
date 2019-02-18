@@ -12,7 +12,7 @@
 - modify `COMPOSE_FILE` inside `DailyAugur.sh` to
     - amd64.yaml (AMD64)
     - armhf.yaml (ARM)
-- change `AUTH_PASSWORD` inside your `.yaml` file to a strong password if you are using authentication
+- change `AUTH_PASSWORD` inside your `.yaml` file to a strong password
     - (optional) change `AUTH_USERNAME` too
 - open your webbrowser and open the IP address of the computer running the DailyAugur installation at port 8082
 
@@ -46,6 +46,9 @@ DailyAugur makes use of several libraries:
 
 It also uses the [Mugglenews](https://www.deviantart.com/nathanthenerd/art/Mugglenews-244787497) font as the main font 
 for the pages.
+
+## Logging
+DailyAugur will log errors and some other events to `src/log.txt`.
 
 ## Legacy Software
 For compatibility reasons to ARMHF, this project uses MySQL 5.5.
