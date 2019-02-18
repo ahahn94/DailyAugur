@@ -1,2 +1,6 @@
 # Created by .ignore support plugin (hsz.mobi)
 .idea
+mysql-data
+!mysql-data/.keep
+src/cache/images
+!src/cache/images/.keep
