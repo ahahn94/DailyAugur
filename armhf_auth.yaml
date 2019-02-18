@@ -16,6 +16,8 @@ services:
     command: bash -c "htpasswd -Bb -c /etc/apache2/.htpasswd $${AUTH_USERNAME} $${AUTH_PASSWORD}; source /etc/apache2/envvars; apache2 -D FOREGROUND"
   database:
     image: hypriot/rpi-mysql:5.5
+    volumes:
+      - ./mysql-data/:/var/lib/mysql/
     environment:
       MYSQL_ROOT_PASSWORD: keinsicherespasswort
       MYSQL_USER: DailyAugur
