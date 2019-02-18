@@ -59,18 +59,41 @@ if ($page_id == -1) {
             ?></textarea>
             <p>
                 <!-- Editor button panel (top). -->
-                <button class="btn btn-primary" id="button-undo"><i class="fa fa-undo"></i> Undo</button>
-                <button class="btn btn-primary" id="button-redo"><i class="fa fa-redo"></i> Redo</button>
-                <button class="btn btn-primary" id="button-bold"><i class="fa fa-bold"></i> Bold</button>
-                <button class="btn btn-primary" id="button-italic"><i class="fa fa-italic"></i> Italic</button>
-                <button class="btn btn-primary" id="button-underline"><i class="fa fa-underline"></i> Underline</button>
-                <button class="btn btn-primary" id="button-newline"><b>&lt;br&gt;</b> New Line</button>
-                <button class="btn btn-primary" id="button-link"><i class="fa fa-link"></i> Link</button>
-                <button class="btn btn-primary" id="button-heading"><i class="fa fa-heading"></i> Heading</button>
-                <button class="btn btn-primary" id="button-picture"><i class="fa fa-image"></i> Picture</button>
-                <button class="btn btn-primary" id="button-gallery"><i class="fa fa-images"></i> Gallery</button>
-                <button class="btn btn-primary" id="button-video"><i class="fa fa-video"></i> Video</button>
-                <button class="btn btn-primary" id="button-page-layout"><i class="fa fa-columns"></i> Page Layout
+                <button class="btn btn-primary" id="button-undo" title="Undo last change.">
+                    <i class="fa fa-undo"></i> Undo
+                </button>
+                <button class="btn btn-primary" id="button-redo" title="Redo last undone change.">
+                    <i class="fa fa-redo"></i> Redo
+                </button>
+                <button class="btn btn-primary" id="button-bold" title="Format text as bold.">
+                    <i class="fa fa-bold"></i> Bold
+                </button>
+                <button class="btn btn-primary" id="button-italic" title="Format text as italic.">
+                    <i class="fa fa-italic"></i> Italic
+                </button>
+                <button class="btn btn-primary" id="button-underline" title="Format text as underlined.">
+                    <i class="fa fa-underline"></i> Underline
+                </button>
+                <button class="btn btn-primary" id="button-newline" title="Insert a linebreak.">
+                    <b>&lt;br&gt;</b> New Line
+                </button>
+                <button class="btn btn-primary" id="button-link" title="Insert a link.">
+                    <i class="fa fa-link"></i> Link
+                </button>
+                <button class="btn btn-primary" id="button-heading" title="Format text as a heading.">
+                    <i class="fa fa-heading"></i> Heading
+                </button>
+                <button class="btn btn-primary" id="button-picture" title="Insert tags for a picture incl. caption.">
+                    <i class="fa fa-image"></i> Picture
+                </button>
+                <button class="btn btn-primary" id="button-gallery" title="Insert a picture from the gallery.">
+                    <i class="fa fa-images"></i> Gallery
+                </button>
+                <button class="btn btn-primary" id="button-video" title="Insert tags for a video incl. caption.">
+                    <i class="fa fa-video"></i> Video
+                </button>
+                <button class="btn btn-primary" id="button-page-layout" title="Insert a preformatted page layout.">
+                    <i class="fa fa-columns"></i> Page Layout
                 </button>
             </p>
             <textarea style="width: 100%; height: 70%;"
@@ -82,13 +105,18 @@ if ($page_id == -1) {
                     </p>
                     <p>
                         <!-- Editor button panel (bottom). -->
-                        <button class="btn btn-danger" id="button-delete">Delete <i class="fa fa-trash"></i>
+                        <button class="btn btn-danger" id="button-delete" title="Delete this page.">Delete <i
+                                    class="fa fa-trash"></i>
                         </button>
-                        <button class="btn btn-primary" id="button-publish">Publish <i class="fa fa-upload"></i>
+                        <button class="btn btn-primary" id="button-publish" title="Publish this version of this page.">
+                            Publish <i class="fa fa-upload"></i>
                         </button>
-                        <button class="btn btn-primary" id="button-preview">Preview Changes <i class="fa fa-eye"></i>
+                        <button class="btn btn-primary" id="button-preview" title="Open or refresh preview tab.">View
+                            Preview <i class="fa fa-eye"></i>
                         </button>
-                        <button class="btn btn-primary" id="button-save">Save <i class="fa fa-save"></i></button>
+                        <button class="btn btn-primary" id="button-save"
+                                title="Save changes and refresh preview (if any).">Save <i class="fa fa-save"></i>
+                        </button>
                     </p>
                 </div>
             </div>

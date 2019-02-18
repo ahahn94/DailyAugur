@@ -15,22 +15,22 @@ $filename = basename($_SERVER["PHP_SELF"], ".php");
             <li class="nav-item <?php
             if ($filename == "index") echo "active"
             ?>">
-                <a class="nav-link" href="index.php"><i class="fas fa-home"></i>  Home</a>
+                <a class="nav-link" href="index.php" title="Go to Home."><i class="fas fa-home"></i>  Home</a>
             </li>
             <li class="nav-item <?php
             if ($filename == "pages") echo "active"
             ?>">
-                <a class="nav-link" href="pages.php"><i class="fas fa-book"></i>  Pages</a>
+                <a class="nav-link" href="pages.php" title="Go to the Pages section."><i class="fas fa-book"></i>  Pages</a>
             </li>
             <li class="nav-item <?php
             if ($filename == "images") echo "active"
             ?>">
-                <a class="nav-link" href="images.php"><i class="fas fa-image"></i>  Images</a>
+                <a class="nav-link" href="images.php" title="Go to the Images section."><i class="fas fa-image"></i>  Images</a>
             </li>
         </ul>
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="btn btn-primary" href="index.php?logout=true">
+                <a class="btn btn-primary" href="index.php?logout=true" title="Log out of the Admin area.">
                     Logout  <i class="fas fa-sign-out-alt"></i></a>
             </li>
         </ul>

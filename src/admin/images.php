@@ -32,7 +32,7 @@ require_once "res/style/menu.php";
 <div class="row justify-content-end" style="margin: 10px">
     <div class="col-10"></div>
     <div class="col-auto">
-        <button class="btn btn-primary" id="button-select-image"><i class="fa fa-image"> Select Image for Upload</i>
+        <button class="btn btn-primary" id="button-select-image" title="Upload images from your computer."><i class="fa fa-image"> Select Image for Upload</i>
         </button>
     </div>
 </div>
@@ -66,10 +66,10 @@ require_once "res/style/menu.php";
                                 <div class="d-flex justify-content-between align-items-center">
                                     <div>
                                         <a class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer"
-                                           href="<?php echo $image_path ?>">
+                                           href="<?php echo $image_path ?>" title="View this image in a new tab.">
                                             <i class="fa fa-eye"></i> View</a>
                                         <button type="button" class="btn btn-danger btn-sm"
-                                                onclick="deleteImage('<?php echo $image_id; ?>')"><i
+                                                onclick="deleteImage('<?php echo $image_id; ?>')" title="Delete this image from the server."><i
                                                     class="fa fa-trash"></i>
                                             Delete
                                         </button>

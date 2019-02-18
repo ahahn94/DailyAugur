@@ -52,7 +52,7 @@ require_once "res/style/menu.php";
                 echo '<td>' . $date_last_modified . '</td>';
                 echo '<td>' . $date_saved . '</td>';
                 echo '<td class="text-center">
-<a class="btn btn-primary btn-sm" href="edit_page.php?page_id=' . $page["page_id"] . '"><b>Edit  </b><i class="fas fa-edit"></i></a>
+<a class="btn btn-primary btn-sm" href="edit_page.php?page_id=' . $page["page_id"] . '" title="Open this page in the editor."><b>Edit  </b><i class="fas fa-edit"></i></a>
 </td>';
                 echo '</tr>';
             }
@@ -63,7 +63,7 @@ require_once "res/style/menu.php";
             <td><!--Spacer--></td>
             <td><!--Spacer--></td>
             <td><!--Spacer--></td>
-            <td class="text-center"><a class="btn btn-primary btn-sm" href="create_page.php"><b>New Page </b><i
+            <td class="text-center"><a class="btn btn-primary btn-sm" href="create_page.php" title="Create a new page and open the editor."><b>New Page </b><i
                             class="fas fa-plus"></i></a></td>
         </tr>
     </table>
