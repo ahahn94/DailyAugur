@@ -45,7 +45,9 @@ DailyAugur makes use of several libraries:
 - [Popper.JS](https://popper.js.org/) (needed by Bootstrap)
 
 It also uses the [Mugglenews](https://www.deviantart.com/nathanthenerd/art/Mugglenews-244787497) font as the main font 
-for the pages.
+for the page header and Noto Sans for the page content.
+
+The Noto Sans font is licensed under the SIL Open Font License, Version 1.1. which can be found in the NotoSansLicense.txt file.
 
 ## Logging
 DailyAugur will log errors and some other events to `src/log.txt`.

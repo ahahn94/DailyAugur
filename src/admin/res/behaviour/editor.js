@@ -106,7 +106,7 @@ function insertVideo() {
 }
 
 function insertHeading() {
-    surroundSelectionWithText("<h2 class='text-center'>", "</h2>");
+    surroundSelectionWithText("<h2 class='text-center textflow'>", "</h2>");
 }
 
 /**

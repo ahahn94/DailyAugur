@@ -54,8 +54,8 @@ $home = "index.php";
         </tr>
     </table>
 
-    <h2 class="text_center" style="padding: 5px 0 0 0"><?php echo $page["saved_title"]; ?></h2>
-    <div style="font-family: Mugglenews, arial, serif;" class="text_area" id="content">
+    <h2 class="text_center textflow" style="padding: 5px 0 0 0"><?php echo $page["saved_title"]; ?></h2>
+    <div class="text_area textflow" id="content">
         <?php
 
         echo $page["saved_content"];
