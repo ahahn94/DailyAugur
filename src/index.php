@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Daily Augur</title>
     <?php
+    require_once __DIR__ . "/admin/res/style/head_includes.php";
     require_once "res/style/head_includes.php";
     ?>
 </head>
