@@ -119,15 +119,15 @@ function insert2ColumnLayout(firstColumnWidth) {
         "<table width='100%'>\n" +
         "<tbody>\n" +
         "<tr>\n" +
-        "    <td colspan='2'>\n" +
+        "    <td colspan='2' valign='top'>\n" +
         "\n<!-- Upper cell. -->\n\n" +
         "    </td>\n" +
         "</tr>\n" +
         "<tr>\n" +
-        "    <td width='" + firstColumnWidth + "'>\n" +
+        "    <td width='" + firstColumnWidth + "' valign='top'>\n" +
         "\n<!-- Left cell. -->\n\n" +
         "    </td>\n" +
-        "    <td>\n" +
+        "    <td valign='top'>\n" +
         "\n<!-- Right cell. -->\n\n" +
         "    </td>\n" +
         "</tr>\n" +
@@ -145,18 +145,18 @@ function insert3ColumnLayout() {
         "<table width='100%'>\n" +
         "<tbody>\n" +
         "<tr>\n" +
-        "    <td colspan='3'>\n" +
+        "    <td colspan='3' valign='top'>\n" +
         "\n<!-- Upper cell. -->\n\n" +
         "    </td>\n" +
         "</tr>\n" +
         "<tr>\n" +
-        "    <td>\n" +
+        "    <td valign='top'>\n" +
         "\n<!-- Left cell. -->\n\n" +
         "    </td>\n" +
-        "    <td>\n" +
+        "    <td valign='top'>\n" +
         "\n<!-- Middle cell. -->\n\n" +
         "    </td>\n" +
-        "    <td>\n" +
+        "    <td valign='top'>\n" +
         "\n<!-- Right cell. -->\n\n" +
         "    </td>\n" +
         "</tr>\n" +
