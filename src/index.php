@@ -10,7 +10,7 @@
 </head>
 <body style="background-color: #f9f7f1">
 <?php
-require_once "res/page_layout.php";
+require_once "res/style/page_layout.php";
 ?>
 </body>
 </html>

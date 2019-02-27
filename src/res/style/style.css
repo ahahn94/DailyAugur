@@ -18,12 +18,12 @@ video {
 
 @font-face {
     font-family: Mugglenews;
-    src: url("../mugglenews.ttf");
+    src: url("../fonts/mugglenews.ttf");
 }
 
 @font-face {
     font-family: NotoSans-CondensedBlack;
-    src: url("../NotoSans-CondensedBlack.ttf");
+    src: url("../fonts/NotoSans-CondensedBlack.ttf");
 }
 
 b {

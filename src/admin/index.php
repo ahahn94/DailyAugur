@@ -35,7 +35,7 @@ require_once "res/style/menu.php"
 ?>
 
 <?php
-require_once __DIR__ . "/../res/page_layout.php";
+require_once __DIR__ . "/../res/style/page_layout.php";
 ?>
 
 <?php
